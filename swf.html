@@ -1,0 +1,82 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Hub</title>
+
+<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+
+<style>
+body {
+    margin: 0;
+    background: #0f0f0f;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.menu {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px 18px;
+    margin: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #1e90ff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0f6cd1;
+}
+
+#gameContainer {
+    width: 100%;
+    height: 85vh;
+    background: black;
+}
+</style>
+</head>
+<body>
+
+<h1>My Game Hub</h1>
+
+<div class="menu">
+    <button onclick="loadGame('WHG3.swf')">WHG 3</button>
+    <button onclick="loadGame('WHG2.swf')">WHG 2</button>
+    <button onclick="loadGame('NINJA.swf')">Ninjago</button>
+    <button onclick="loadGame('WEG.swf')">WEG</button>
+    <button onclick="loadGame('WHG4.swf')">WHG 4</button>
+    <button onclick="loadGame('GSwitch2.swf')">G Switch</button>
+    <button onclick="loadGame('NHL_94.swf')">NHL 94</button>
+</div>
+
+<div id="gameContainer"></div>
+
+<script>
+function loadGame(file) {
+    const container = document.getElementById("gameContainer");
+    container.innerHTML = "";
+
+    const ruffle = window.RufflePlayer.newest();
+    const player = ruffle.createPlayer();
+
+    player.style.width = "100%";
+    player.style.height = "100%";
+
+    container.appendChild(player);
+    player.load(file);
+}
+</script>
+
+</body>
+</html>
