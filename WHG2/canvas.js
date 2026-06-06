@@ -4,6 +4,12 @@ var canvas = canvasElement.getContext("2d");
 function resizeCanvas() {
     canvasElement.width = window.innerWidth;
     canvasElement.height = window.innerHeight;
+
+    CANVAS_WIDTH = window.innerWidth;
+    CANVAS_HEIGHT = window.innerHeight;
+
+    canvasWidth = window.innerWidth;
+    canvasHeight = window.innerHeight;
 }
 
 resizeCanvas();
