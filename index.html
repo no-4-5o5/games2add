@@ -1,0 +1,74 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Game Hub</title>
+
+<style>
+body {
+    margin: 0;
+    background: #0f0f0f;
+    color: white;
+    font-family: Arial, sans-serif;
+    text-align: center;
+}
+
+h1 {
+    margin: 20px;
+}
+
+.menu {
+    margin-bottom: 10px;
+}
+
+button {
+    padding: 12px 18px;
+    margin: 8px;
+    font-size: 16px;
+    border: none;
+    border-radius: 8px;
+    background: #1e90ff;
+    color: white;
+    cursor: pointer;
+}
+
+button:hover {
+    background: #0f6cd1;
+}
+
+iframe {
+    width: 100%;
+    height: 85vh;
+    border: none;
+    background: black;
+}
+</style>
+</head>
+<body>
+
+<h1>My Game Hub</h1>
+
+<div class="menu">
+    <button onclick="loadGame('WHG3.html')">WHG 3</button>
+    <button onclick="loadGame('WHG2.html')">WHG 2</button>
+    <button onclick="loadGame('NINJA.html')">Ninjago</button>
+    <button onclick="loadGame('WEG.html')">WEG</button>
+    <button onclick="loadGame('WHG4.html')">WHG 4</button>
+    <button onclick="loadGame('GSwitch2.html')">G Switch</button>
+    <button onclick="loadGame('NHL_94.html')">NHL 94</button>
+    <button onclick="loadGame('yohoho/index.html')">yohoho</button>
+    <button onclick="loadGame('rowdycitywrestling/index.html')">RCW</button>
+    <button onclick="loadGame('GDR.html')">GeoScratch</button>
+</div>
+
+<iframe id="gameFrame" src=""></iframe>
+
+<script>
+function loadGame(file) {
+    document.getElementById("gameFrame").src = file;
+}
+</script>
+
+</body>
+</html>
