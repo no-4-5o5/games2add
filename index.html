@@ -1,109 +1,38 @@
+
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-<meta charset="UTF-8">
-<meta name="viewport" content="width=device-width, initial-scale=1.0">
-<title>Game Hub</title>
+	<meta name="robots" content="noindex,nofollow" />
+	<meta charset="utf-8">
+	<meta http-equiv="Content-Type" content="text/html; charset=utf-8">
+	<title>Supergun</title>
+	<script>
+	window.config = {
+		loader: 'unity',
+		debug: false,
+		maxRatio: 16 / 9,
+		minRatio: 9 / 16,
 
-<script src="https://unpkg.com/@ruffle-rs/ruffle"></script>
+		title: 'Supergun',
+		thumbnail: 'https:\/\/img.poki.com\/81bebf408fe72badac37301a4fc599e5.png',
+		numScreenshots:  8 ,
 
-<style>
-body {
-    margin: 0;
-    background: #0f0f0f;
-    color: white;
-    font-family: Arial, sans-serif;
-    text-align: center;
-}
+		unityVersion: '2017.4.33f1',
+		unityWebglBuildUrl: 'Build\/Supergun-WebGL-Poki-Wasm.json',
 
-h1 { margin: 20px; }
-
-.menu { margin-bottom: 10px; }
-
-button {
-    padding: 12px 18px;
-    margin: 8px;
-    font-size: 16px;
-    border: none;
-    border-radius: 8px;
-    background: #1e90ff;
-    color: white;
-    cursor: pointer;
-}
-
-button:hover {
-    background: #0f6cd1;
-}
-
-#gameFrame {
-    width: 100%;
-    height: 85vh;
-    border: none;
-    background: black;
-    display: none;
-}
-
-#gameContainer {
-    width: 100%;
-    height: 85vh;
-    display: none;
-}
-</style>
+		fileSize:  43 ,
+		cachedDecompressedFileSizes: {
+			'Supergun-WebGL-Poki-Wasm.asm.code.unityweb':  20815938 ,
+			'Supergun-WebGL-Poki-Wasm.asm.framework.unityweb':  416077 ,
+			'Supergun-WebGL-Poki-Wasm.asm.memory.unityweb':  1107111 ,
+			'Supergun-WebGL-Poki-Wasm.data.unityweb':  8641702 ,
+			'Supergun-WebGL-Poki-Wasm.wasm.code.unityweb':  11808131 ,
+			'Supergun-WebGL-Poki-Wasm.wasm.framework.unityweb':  701217 ,
+		},
+	};
+	</script>
 </head>
 <body>
-
-<h1>My Game Hub</h1>
-
-<div class="menu">
-    <button onclick="loadGame('WHG3.swf')">WHG 3</button>
-    <button onclick="loadGame('WHG2.swf')">WHG 2</button>
-    <button onclick="loadGame('Snore.swf')">Snoring</button>
-    <button onclick="loadGame('WEG.swf')">WEG</button>
-    <button onclick="loadGame('WHG4.swf')">WHG 4</button>
-    <button onclick="loadGame('SLIMELAB.swf')">Slime Lab</button>
-    <button onclick="loadGame('PT/index.html')">PolyTrack</button>
-    <button onclick="loadGame('yohoho/index.html')">yohoho</button>
-    <button onclick="loadGame('rowdycitywrestling/index.html')">RCW</button>
-    <button onclick="loadGame('GW/index.html')">GeoWaves</button>
-    <button onclick="loadGame('SWING/index.html')">Swingers</button>
-</div>
-
-<iframe id="gameFrame"></iframe>
-<div id="gameContainer"></div>
-
-<script>
-function loadGame(file) {
-    const ext = file.split('.').pop().toLowerCase();
-
-    const iframe = document.getElementById("gameFrame");
-    const container = document.getElementById("gameContainer");
-
-    // reset both
-    iframe.style.display = "none";
-    iframe.src = "";
-    container.style.display = "none";
-    container.innerHTML = "";
-
-    if (ext === "swf") {
-        // Ruffle player
-        container.style.display = "block";
-
-        const ruffle = window.RufflePlayer.newest();
-        const player = ruffle.createPlayer();
-
-        player.style.width = "100%";
-        player.style.height = "100%";
-
-        container.appendChild(player);
-        player.load(file);
-
-    } else {
-        // normal HTML game
-        iframe.style.display = "block";
-        iframe.src = file;
-    }
-}
-</script>
-
+	<script src="/master-loader.js"></script>
 </body>
 </html>
